@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-kinetic-black: #000000;
+  --color-kinetic-white: #FFFFFF;
+  --color-kinetic-accent: #CBFF00; /* Electric Lime */
+}
+
+@layer base {
+  body {
+    background-color: white;
+    color: black;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.85;
+  }
+}
+
+@utility text-outline-brutal {
+  color: transparent;
+  -webkit-text-stroke: 1.5px black;
+}
+
+@utility text-glow-accent {
+  text-shadow: 0 0 20px rgba(203, 255, 0, 0.4);
+}
+
+@utility brutal-shadow {
+  box-shadow: 8px 8px 0px 0px #000000;
+}
+
+@utility marquee-scroll {
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
